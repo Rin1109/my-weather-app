@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>🔆Weather App</title>
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+   <link rel="stylesheet" href="CSS/style.css">
+   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+   <div class="container">
+      <div id="weather" class="weather-container">
+         <div class="App">
+            <div class="clearfix">
+               <form class="float-left" id="search-form">
+                  <input type="text" placeholder="Enter a city" autocomplete="off" id="search-text-input" value="">
+                  <input type="submit" class="btn btn-primary" value="Search">
+               </form>
+               <button class="float-left btn btn-warning" id="current-button">Current</button>
+            </div>
+            <div class="weather-summary">
+               <div class="weather-summary-header">
+                  <h3 id="city">London</h3>
+                  <div class="weather-detail__text">
+                     <span id="day">Friday 10/06</span>  
+                     <br>
+                     <span id="time">11:03</span>
+                  </div>
+               </div>
+               <div class="row">
+                  <div class="col-sm-6">
+                     <div class="clearfix">
+                        <div class="float-left weather-icon">
+                           <canvas width="38" height="38">
+                           </canvas>
+                        </div>
+                        <h1>
+                           <span id="temp-main">23</span>
+                           <span id="temp-degrees">
+                              <a href="#" id="celsius">°C</a> 
+                              <a href="#" id="fahrenheit"></a>
+                           </span>
+                           
+                        </h1>
+                        <div class="text">
+                           <div class="weather-detail__text"><strong>Feels like: </strong> <span id="temp-feels-like">20</span> °C</div>
+                           <div class="weather-detail__text"><strong>Max temperature: </strong> <span id="temp-max">24</span> °C</div>
+                           <div class="weather-detail__text"><strong>Min temperature: </strong> <span id="temp-min">20</span> °C</div>
+                           <div class="weather-detail__text"><strong>Humidity: </strong> <span id="humidity">58</span> %</div>
+                           <div class="weather-detail__text"><strong>Wind: </strong><span id="wind">14</span> km/h</div>
+                        </div>
+                     </div>
+                  </div>
+                        <div class="col-sm-6" id="col-with-main-img">
+                           <img src="https://media1.giphy.com/media/5We0JiVucApXO/giphy.gif?cid=790b7611187f603a7408f761375108026aa25a1d3e3eaa4f&rid=giphy.gif&ct=s" alt="Sunny" class="main-img">
+                           <p class="describe-weather">Very warm with plenty of sunshine</p>
+                        </div>
+                     </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                     <div class="col-sm-2">
+                        <div class="forecast-day">Sat</div>
+                        <img src="https://media0.giphy.com/media/fsDGryZw8pv8TYP8jN/200.webp?cid=ecf05e47rk7yxgbdh6tnszetg3186vfemtoe0i24nw5pkd4m&rid=200.webp&ct=s" alt="Sunny" width="38" height="38">
+                        <div class="forecast-temperature">26°</div>
+                     </div>
+                     <div class="col-sm-2">
+                        <div class="forecast-day">Sun</div>
+                        <img src="https://media1.giphy.com/media/5We0JiVucApXO/giphy.gif?cid=790b7611187f603a7408f761375108026aa25a1d3e3eaa4f&rid=giphy.gif&ct=s" alt="Sunny" width="38" height="38">
+                        <div class="forecast-temperature">27°</div>
+                     </div>
+                     <div class="col-sm-2">
+                        <div class="forecast-day">Mon</div>
+                        <img src="https://media1.giphy.com/media/Td3HCvebVuunVWqQV9/200w.webp?cid=ecf05e473pp2s3yn0x2ochiobqtw53d1biumwg3rjv5l1foc&rid=200w.webp&ct=s" alt="Rain" width="38" height="38">
+                        <div class="forecast-temperature">27°</div>
+                     </div>
+                     <div class="col-sm-2">
+                        <div class="forecast-day">Tue</div>
+                        <img src="https://media1.giphy.com/media/5We0JiVucApXO/giphy.gif?cid=790b7611187f603a7408f761375108026aa25a1d3e3eaa4f&rid=giphy.gif&ct=s" alt="Sunny" width="38" height="38">
+                           <div class="forecast-temperature">26°</div>
+                        </div>
+                        <div class="col-sm-2">
+                           <div class="forecast-day">Wed</div>
+                           <img src="https://media1.giphy.com/media/XUQrufWHU1ThHweX89/giphy.gif?cid=ecf05e476k23wz9bu3g4ohifzroqd7cah3ecp8svvb7d4z1m&rid=giphy.gif&ct=s" alt="clouds" width="38" height="38">
+                           <div class="forecast-temperature">21°</div>
+                        </div>
+                        <div class="col-sm-2">
+                           <div class="forecast-day">Thu</div>
+                           <img src="https://media1.giphy.com/media/5We0JiVucApXO/giphy.gif?cid=790b7611187f603a7408f761375108026aa25a1d3e3eaa4f&rid=giphy.gif&ct=s" alt="Sunny" width="38" height="38">
+                           <div class="forecast-temperature">25°</div>
+                        </div>
+                     </div>
+         </div>
+      </div>
+   </div>
+   <script src="js/script3api.js" defer ></script>
+</body>
+</html>
