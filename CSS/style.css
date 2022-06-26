@@ -107,3 +107,9 @@ a:hover {
    color: black;
 }
 
+#open-source-code-link {
+   display: block;
+   max-width: 660px;
+   margin: 0 auto;
+   font-size: 14px;
+}
